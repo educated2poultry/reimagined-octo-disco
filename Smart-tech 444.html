@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTech | Innovative Solutions</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            scroll-behavior: smooth;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            background: powderblue;
+            color:black;
+            padding: 1rem;
+            position: sticky;
+            top: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            padding: 10px;
+        }
+
+            .logo-box {
+                display: flex;
+                flex-direction: flex-start;
+                align-items: right;
+            }
+        
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }        
+
+        .hero {
+            padding: 80px 20px;
+            background-color: #f4f9fc;
+        }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+            gap: 40px;
+        }
+
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white !important;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+        .hero-image img {
+           width: 100%; /* Image fills its 50% */
+           height: auto;
+           border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero-text {
+            text-align: center;
+        }
+        }
+        
+        /* sliding pictures */
+        .slider-window {
+           width: 100%;
+           max-width: 1000px;
+           margin: auto;
+           overflow: hidden; /* This hides the other images */
+           border-radius: 10px;
+        }
+
+        .slider-track {
+           display: flex;
+           width: 500%; /* 100% for each image (4 total here) */
+           animation: slide-show 15s infinite;
+        }
+
+        .slider-track img {
+            width: 20%;    /* This stops the "Zoom" effect */
+            flex-shrink: 0; 
+            object-fit: cover; /* Optional: keeps images from stretching */
+            height: 400px;     /* Set a fixed height so they all match */
+        }
+        
+
+        @keyframes slide-show {
+           0%, 15% { transform: translateX(0); }             /* Image 1 */
+           20%, 35% { transform: translateX(-20%); }         /* Image 2 */
+           40%, 55% { transform: translateX(-40%); }         /* Image 3 */
+           60%, 75% { transform: translateX(-60%); }         /* Image 4 */
+           80%, 95% { transform: translateX(-80%); }         /* Image 5 (Repeat of 1) */
+           100% { transform: translateX(0); }                /* Reset */
+           }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Pricing Table */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
+            border: 1px solid #powderblue;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        #services {
+           text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* Stacks them on small screens */
+            margin-top: 30px;
+        }
+
+        .service-card {
+           flex: 1;
+           min-width: 250px;
+           max-width: 300px;
+           background: #fff;
+           border-radius: 10px;
+           overflow: hidden;
+           box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+           transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+           width: 100%;
+           height: 200px;
+           object-fit: cover; /* Keeps images from looking squished */
+        }
+
+        .service-info {
+            padding: 20px;
+        }
+
+        .service-info strong {
+            display: block;
+            font-size: 1.2rem;
+            color: grey;
+            margin-bottom: 10px;
+        }
+
+
+
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .footer-container {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          max-width: 1100px;
+          margin: auto;
+          text-align: left;
+          
+        }
+        footer {
+           background: #2c3e50; /*dark navy */
+           color: white;
+           padding: 40px 20px;
+           margin-top: 40px;
+        }
+
+        .footer-col h3, .footer-col h4 {
+           color: #3498db !important;
+           margin-bottom: 15px;
+        }
+        
+        footer a {
+           color: #bdc3c7;
+           text-decoration: none;
+        }
+
+        footer a:hover {
+          color: #3498db;
+          text-decoration: underline;
+        } 
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Heading & Navigation -->
+    <nav>
+        <img src= "Smart tech logo.png " width="120" height="100">
+        
+        <div class="logo-group"></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#help">Help</a></li>
+            <li><a href="CV Form.html">Click To Register></a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <header id="home" class="hero">
+     <div class="hero-container">
+      <div class="hero-text">    
+        <h1>Empowering the Future of Tech</h1>
+        <p>Your partner in digital transformation and smart engineering.</p>
+        <a href="https://www.google.com" target="_blank" style="color: black;">Learn more about the industry &rarr;</a>      
+        <br><br>
+        <button type="CV Form.html"><a href= "CV Form.html">< Click To Register></a></button>
+      </div>                
+     </div>    
+    </header>
+    <!--Right Side: Image-->
+<div class="slider-window">
+     <div class="slider-track">
+        <img src="smiling-download.png" alt="Slide 1">
+        <img src= "AI.png" alt="Slide 2">
+        <img src= "cybersecurity.png" alt="Slide 3">
+        <img src= "downloadcomputing.png" alt="Slide 4">
+        <!--Repeats image-->
+        <img src="smiling-download.png" alt="slide 1">
+</div>
+    </div>
+    <!-- Service Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+        
+      <!--1st img-->
+    <div class="service-card" onclick="toggleDetails('cloud-desc')" style="cursor: pointer;">
+        <img src= "downloadcomputing.png">
+        <div class="service-info">
+        <strong> Cloud computing:</strong>
+        <p>Cloud computing is the on-demand delivery of computing power, database storage, and applications over the internet.</p>
+
+        <div id="cloud-desc" style="display: none;padding-top: 10px; border-top:1px solid #eee; font-size: 0.9rem; color: #666;">
+            On-demand delivery of IT resources—such as servers, storage, databases, networking, and software—over the internet with pay-as-you-go pricing. Instead of owning and maintaining physical data centers, organizations rent access to these services from providers like AWS, Microsoft Azure, and Google Cloud. 
+        </div>
+      </div>
+    </div>  
+            <!--2nd img-->
+    <div class="service-card" onclick="toggleDetails('ai-desc')" style="cursor: pointer;">
+          <img src= "AI.png">
+        <div class="service-info">    
+             <strong>AI Solutions:</strong>
+             <p> Empowering your business with intelligent automation and data-driven insights to solve complex challenges in real-time.</p>
+
+            <div id="ai-desc" style="display: none;padding-top: 10px; border-top:1px solid #eee; font-size: 0.9rem; color: #666;">
+               AI solutions are rapidly transforming the global landscape by leveraging machine learning, natural language processing, and computer vision to automate tasks, analyze data, and enhance decision-making.  
+            </div>   
+        </div>
+    </div>
+
+          <!--3rd img-->
+        <div class="service-card" onclick="toggleDetails('cybersecurity-desc')" style="cursor: ">
+                <img src="cybersecurity.png">
+        <div class="service-info">
+                <strong>Cyber Security:</strong>
+                <p> Protecting your digital assets with advanced threat detection and robust defense layers designed for a zero-trust world.</p>
+            <div id="cybersecurity-desc" style="display: none;padding-top: 10px; border-top:1px solid #eee; font-size: 0.9rem; color: #666;">
+                 A vital, evolving, and multi-layered discipline dedicated to defending computers, networks, mobile devices, and data from malicious attacks, theft, or unauthorized access. In an increasingly digital world, it is no longer optional but a necessary, strategic component of both personal safety and business continuity.
+            </div>
+        </div>
+    </div>    
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <center><h2>About Us</h2></center>
+        <p>Founded in 2002, SmartTech has been at the forefront of innovation. We believe in creating technology that is accessible, efficient, and secure for everyone. Our team of experts is dedicated to solving complex problems with simple solutions.</p>
+    </section>
+
+    <!-- Pricing Table Section -->
+    <section id="pricing">
+        <center><h2>Pricing Plans</h2></center>
+        <div class="pricing-container">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <p>3000KES/mo</p>
+                <hr>
+                <p>1 User</p>
+                <p>5GB Storage</p>
+                <p>Email Support</p>
+            </div>
+            <div class="pricing-card" style="border-color: #grey;">
+                <h3>Pro</h3>
+                <p>1 500KES/mo</p>
+                <hr>
+                <p>10 Users</p>
+                <p>50GB Storage</p>
+                <p>Priority Support</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <p>Custom</p>
+                <hr>
+                <p>Unlimited Users</p>
+                <p>Unlimited Storage</p>
+                <p>24/7 Phone Support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <center><h2>Contact Us</h2></center>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="How can we help you?" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- Help section -->
+    <section id="help">
+        <center><h2>Help</h2></center>
+        <center><button type="CV Form.html"><a href="CV Form.html">Click To Register</a></center>
+    </section>    
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>SmartTech</h3>
+            <p>Empowering your digital future since 2002.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Links</h4>
+            <ul style="list-style:none; padding:0;">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#About us">About Us</a></li>
+                <li><a href="Pricing Plans">Pricing Plans</a></li>
+                <li><a href="Contact Us">Contact Us</a></li>
+                <li><a href="Help">Help</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Email: info@smarttech.com</p>
+            <p>Phone: +254 750 280 900</p>
+        </div>
+    </div>
+    <hr style="border: 0.5px solid #444; width: 80%; margin: 20px auto;">
+    <p><center>&copy; 2026 SmartTech International. All rights reserved.</center></p>
+
+        
+    </footer>
+    <script>
+        function toggleDetails(id) {
+          var infoBox = document.getElementById(id);
+    
+    // If it's hidden, show it. If it's showing, hide it.
+    if (infoBox.style.display === "none") {
+        infoBox.style.display = "block";
+    } else {
+        infoBox.style.display = "none";
+    }
+}
+
+
+</script>
+
+</body>
+</html>

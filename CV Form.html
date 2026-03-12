@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CV Form</title>
+
+
+    <style>
+        
+        body {
+
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            margin: 0;
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* Main box covering image + form */
+       .main-box {
+            background: white;
+            padding: 30px;
+            border-radius: 35px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            border: 7px solid #333;   /* OUTER LINE */
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            /*Add lines to stretch */
+            width: 180%;
+            max-width: 600px;
+            margin: 40px auto; 
+        }    
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 180%;     /*Stack items vertically */
+            align-items: center;        /*center everything */
+            gap: 20px;
+        }
+
+        .photo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0,.2);
+        }    
+        
+        .photo {
+            display: block;
+            flex-direction: column;
+            align-items: center;  /* centers everything inside */
+            gap:10px;
+        }
+        .photo h1{
+            margin-top: 15px;
+        }
+
+        
+        h1 {
+    text-align: center;
+    font-size: 40px;   /* increases size */
+    margin-bottom: 20px;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;   /* increases size */
+    margin-bottom: 20px;
+}
+
+        
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea, select {
+            width: 100% ;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius:5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+    display: block;       /* makes margin auto work */
+    width: 300px;         /* adjust width as needed */
+    margin: 20px auto 0 auto;  /* top 20px, auto left/right */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    .form-container {
+      background-color: white;   /* Different from page background */
+      padding: 30px;
+      width: 100%;
+      box-sizing: border-box;
+}
+
+
+     </style>
+    
+</head>
+
+<body>
+
+    <div class="main-box">
+
+        <!--Logo + Heading Section-->
+        <div class= "photo">
+            <img src = "Smart tech logo.png">
+            <h1> APPLICATION ORDER</h1>
+        </div>
+        
+        <!-- Form Section -->
+        <div class="form-container">
+             <!-- form stays here -->
+
+        <form>
+            <label>First Name</label>
+            <input type="text" name="firstname" required>
+
+            <label>Last Name</label>
+            <input type="text" name="lastname" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone">
+
+            <label>Highest Qualification</label>
+            <select name="qualification">
+                <option>Cloud computing</option>
+                <option>AI solutions</option>
+                <option>Cyber security</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+<a href="Smart-tech 444.html">Back home</a>
+</body>
+</html>
